@@ -18,7 +18,7 @@ palindrome = {
 }
 
 
-def safe_open(trypath):
+def safe_open_readlines(trypath):
     with open(trypath, 'r') as file_reader:
         return file_reader.readlines()
 
@@ -58,7 +58,7 @@ def find_palindromes(test_file):
             increment_strict(palindrome)
 
 
-find_palindromes(safe_open(R_PATH))
+find_palindromes(safe_open_readlines(R_PATH))
 
 print('\nA palindrome is a word that reads the same forward and backward.')
 print('Palindromes of <3 characters are sometimes called trivial.')
