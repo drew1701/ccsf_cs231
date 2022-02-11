@@ -8,30 +8,23 @@ Homework 01: Task:
 Notes:
     Will count palindromes <3 digits as trivial, larger as strict
 """
-
-R_PATH = r'english'
-
-palindrome = {
-    "trivial": 0,
-    "strict": 0
-}
+import os.path
+import sys
 
 
 def fuzzy_path(ispath):
-    import os.path
-    import sys
     if os.path.exists(ispath):
         return ispath
-    pre1 = r'/users/abrick/resources/'
-    if os.path.exists(pre1 + ispath):
-        return pre1 + ispath
-    else:
-        sys.exit('file not found')
+    return r'/users/abrick/resources/' + ispath
 
 
 def safe_open_readlines(trypath):
-    with open(fuzzy_path(trypath), 'r') as file_reader:
-        return file_reader.readlines()
+    try:
+        with open(fuzzy_path(trypath), 'r') as file_reader:
+            return file_reader.readlines()
+    except IOError:
+        print('File can not be opened')
+        sys.exit()
 
 
 def increment_trivial(dict_object):
@@ -59,23 +52,31 @@ def find_palindromes(test_file):
         if len(line) < 1:
             continue
         elif len(line) == 1:
-            increment_trivial(palindrome)
+            increment_trivial(palindromes)
         elif len(line) == 2:
             if is_pair_same(line, 0):
-                increment_trivial(palindrome)
+                increment_trivial(palindromes)
             else:
                 continue
         elif check_all_pairs(line):
-            increment_strict(palindrome)
+            increment_strict(palindromes)
 
 
-find_palindromes(safe_open_readlines(R_PATH))
+F_NAME = 'english'
+
+palindromes = {
+    "trivial": 0,
+    "strict": 0
+}
+
+good_path = fuzzy_path(F_NAME)
+find_palindromes(safe_open_readlines(good_path))
 
 print('\nA palindrome is a word that reads the same forward and backward.')
 print('Palindromes of <3 characters are sometimes called trivial.')
-print('The file ' + '/users/abrick/resources/english')
-print('has a total of ' + str(sum(palindrome.values())) + ' palindromes.')
-print(str(palindrome['trivial']) + ' are trivial in length, ' +
-      str(palindrome['strict']) + ' are at lest 3 characters.\n')
-if check_all_pairs(str(sum(palindrome.values()))):
+print('The file ' + fuzzy_path(R_PATH))
+print('has a total of ' + str(sum(palindromes.values())) + ' palindromes.')
+print(str(palindromes['trivial']) + ' are trivial in length, ' +
+      str(palindromes['strict']) + ' are at lest 3 characters.\n')
+if check_all_pairs(str(sum(palindromes.values()))):
     print('The total number of palindromes is a palindrome.\n')
