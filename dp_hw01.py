@@ -9,7 +9,7 @@ Notes:
     Will count palindromes <3 digits as trivial, larger as strict
 """
 
-R_PATH = r'english2'
+R_PATH = r'english'
 
 palindrome = {
     "trivial": 0,
