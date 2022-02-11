@@ -8,6 +8,7 @@ Homework 01: Task:
 Notes:
     Will count palindromes <3 digits as trivial, larger as strict
 """
+
 import os.path
 import sys
 
@@ -62,14 +63,14 @@ def find_palindromes(test_file):
             increment_strict(palindromes)
 
 
-F_NAME = 'english'
+file_name = 'english'
 
 palindromes = {
     "trivial": 0,
     "strict": 0
 }
 
-good_path = fuzzy_path(F_NAME)
+good_path = fuzzy_path(file_name)
 find_palindromes(safe_open_readlines(good_path))
 
 print('\nA palindrome is a word that reads the same forward and backward.')
