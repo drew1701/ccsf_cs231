@@ -74,7 +74,7 @@ find_palindromes(safe_open_readlines(good_path))
 
 print('\nA palindrome is a word that reads the same forward and backward.')
 print('Palindromes of <3 characters are sometimes called trivial.')
-print('The file ' + fuzzy_path(R_PATH))
+print('The file ' + good_path)
 print('has a total of ' + str(sum(palindromes.values())) + ' palindromes.')
 print(str(palindromes['trivial']) + ' are trivial in length, ' +
       str(palindromes['strict']) + ' are at lest 3 characters.\n')
