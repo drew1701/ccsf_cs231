@@ -9,8 +9,7 @@ Notes:
     Will count palindromes <3 digits as trivial, larger as strict
 """
 
-R_PATH = r'english'
-# R_PATH = r'/users/abrick/resources/english'
+R_PATH = r'english2'
 
 palindrome = {
     "trivial": 0,
@@ -18,8 +17,20 @@ palindrome = {
 }
 
 
+def fuzzy_path(ispath):
+    import os.path
+    import sys
+    if os.path.exists(ispath):
+        return ispath
+    pre1 = r'/users/abrick/resources/'
+    if os.path.exists(pre1 + ispath):
+        return pre1 + ispath
+    else:
+        sys.exit('file not found')
+
+
 def safe_open_readlines(trypath):
-    with open(trypath, 'r') as file_reader:
+    with open(fuzzy_path(trypath), 'r') as file_reader:
         return file_reader.readlines()
 
 
