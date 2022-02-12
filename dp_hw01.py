@@ -40,7 +40,7 @@ def is_pair_same(current, index):
     return current[index] == current[len(current)-1-index]
 
 
-def check_all_pairs(this_line):
+def is_palindrome(this_line):
     for index in range(len(this_line)//2):
         if not is_pair_same(this_line, index):
             return False
@@ -59,7 +59,7 @@ def find_palindromes(test_file):
                 increment_trivial(palindromes)
             else:
                 continue
-        elif check_all_pairs(line):
+        elif is_palindrome(line):
             increment_strict(palindromes)
 
 
@@ -79,5 +79,5 @@ print('The file ' + good_path)
 print('has a total of ' + str(sum(palindromes.values())) + ' palindromes.')
 print(str(palindromes['trivial']) + ' are trivial in length, ' +
       str(palindromes['strict']) + ' are at lest 3 characters.\n')
-if check_all_pairs(str(sum(palindromes.values()))):
+if is_palindrome(str(sum(palindromes.values()))):
     print('The total number of palindromes is a palindrome.\n')

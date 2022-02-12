@@ -17,6 +17,6 @@ class dp_hw01_Test(TestCase):
             'stillnot',
         ]
         for test_str in palindromes:
-            self.assertTrue(dp_hw01.check_all_pairs(test_str), test_str)
+            self.assertTrue(dp_hw01.is_palindrome(test_str), test_str)
         for test_str in not_palindromes:
-            self.assertFalse(dp_hw01.check_all_pairs(test_str), test_str)
+            self.assertFalse(dp_hw01.is_palindrome(test_str), test_str)
