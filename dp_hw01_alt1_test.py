@@ -1,9 +1,9 @@
 from unittest import TestCase
-import dp_hw01
+import dp_hw01_alt1
 
 
-class dp_hw01_Test(TestCase):
-    def test_is_palindrome(self):
+class dp_hw01_alt1_Test(TestCase):
+    def test_check_all_pairs(self):
         palindromes = [
             'a',
             'bb',
@@ -17,6 +17,6 @@ class dp_hw01_Test(TestCase):
             'stillnot',
         ]
         for test_str in palindromes:
-            self.assertTrue(dp_hw01.is_palindrome(test_str), test_str)
+            self.assertTrue(dp_hw01_alt1.is_palindrome(test_str), test_str)
         for test_str in not_palindromes:
-            self.assertFalse(dp_hw01.is_palindrome(test_str), test_str)
+            self.assertFalse(dp_hw01_alt1.is_palindrome(test_str), test_str)

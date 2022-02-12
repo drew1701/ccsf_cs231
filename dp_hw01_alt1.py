@@ -41,11 +41,11 @@ def is_pair_same(current, index):
 
 
 def is_palindrome(this_line):
-    for index in range(len(this_line)//2):
-        print('entering for loop')
-        if not is_pair_same(this_line, index):
-            return False
-    return True
+    first = this_line[:len(this_line)//2]
+    last = this_line[:len(this_line)//2:-1]
+    if first == last:
+        return True
+    return False
 
 
 def find_palindromes(test_file):
