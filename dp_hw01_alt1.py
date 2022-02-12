@@ -71,14 +71,15 @@ palindromes = {
     "strict": 0
 }
 
-good_path = fuzzy_path(file_name)
-find_palindromes(safe_open_readlines(good_path))
+if __name__ == '__main__':
+    good_path = fuzzy_path(file_name)
+    find_palindromes(safe_open_readlines(good_path))
 
-print('\nA palindrome is a word that reads the same forward and backward.')
-print('Palindromes of <3 characters are sometimes called trivial.')
-print('The file ' + good_path)
-print('has a total of ' + str(sum(palindromes.values())) + ' palindromes.')
-print(str(palindromes['trivial']) + ' are trivial in length, ' +
-      str(palindromes['strict']) + ' are at lest 3 characters.\n')
-if is_palindrome(str(sum(palindromes.values()))):
-    print('The total number of palindromes is a palindrome.\n')
+    print('\nA palindrome is a word that reads the same forward and backward.')
+    print('Palindromes of <3 characters are sometimes called trivial.')
+    print('The file ' + good_path)
+    print('has a total of ' + str(sum(palindromes.values())) + ' palindromes.')
+    print(str(palindromes['trivial']) + ' are trivial in length, ' +
+          str(palindromes['strict']) + ' are at lest 3 characters.\n')
+    if is_palindrome(str(sum(palindromes.values()))):
+        print('The total number of palindromes is a palindrome.\n')

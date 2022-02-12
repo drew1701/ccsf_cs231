@@ -42,18 +42,15 @@ def is_pair_same(current, index):
 
 def is_palindrome(this_line):
     for index in range(len(this_line)//2):
-        print('entering for loop')
         if not is_pair_same(this_line, index):
             return False
     return True
 
 
-def find_palindromes(test_file):
+def count_palindromes(test_file):
     for line in test_file:
         line = line.strip()
-        if len(line) < 1:
-            continue
-        elif len(line) == 1:
+        if len(line) < 2:
             increment_trivial(palindromes)
         elif len(line) == 2:
             if is_pair_same(line, 0):
@@ -71,14 +68,15 @@ palindromes = {
     "strict": 0
 }
 
-good_path = fuzzy_path(file_name)
-find_palindromes(safe_open_readlines(good_path))
+if __name__ == '__main__':
+    good_path = fuzzy_path(file_name)
+    count_palindromes(safe_open_readlines(good_path))
 
-print('\nA palindrome is a word that reads the same forward and backward.')
-print('Palindromes of <3 characters are sometimes called trivial.')
-print('The file ' + good_path)
-print('has a total of ' + str(sum(palindromes.values())) + ' palindromes.')
-print(str(palindromes['trivial']) + ' are trivial in length, ' +
-      str(palindromes['strict']) + ' are at lest 3 characters.\n')
-if is_palindrome(str(sum(palindromes.values()))):
-    print('The total number of palindromes is a palindrome.\n')
+    print('\nA palindrome is a word that reads the same forward and backward.')
+    print('Palindromes of <3 characters are sometimes called trivial.')
+    print('The file ' + good_path)
+    print('has a total of ' + str(sum(palindromes.values())) + ' palindromes.')
+    print(str(palindromes['trivial']) + ' are trivial in length, ' +
+          str(palindromes['strict']) + ' are at lest 3 characters.\n')
+    if is_palindrome(str(sum(palindromes.values()))):
+        print('The total number of palindromes is a palindrome.\n')

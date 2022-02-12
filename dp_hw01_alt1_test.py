@@ -3,7 +3,7 @@ import dp_hw01_alt1
 
 
 class dp_hw01_alt1_Test(TestCase):
-    def test_check_all_pairs(self):
+    def test_is_palindrome(self):
         palindromes = [
             'a',
             'bb',
