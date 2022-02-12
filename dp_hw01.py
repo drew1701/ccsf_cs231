@@ -6,14 +6,14 @@ Homework 01: Task:
     Write a program that prints the number of palindromes in
     /users/abrick/resources/english
 Notes:
-    Will count palindromes <3 digits as trivial, larger as strict
+    Will count palindromes <3 digits as trivial, larger as strict.
 """
 
 import os.path
 import sys
 
 
-# If file is not local add hills prefix to path
+# If file is not local add hills prefix to path.
 def fuzzy_path(ispath):
     if os.path.exists(ispath):
         return ispath
@@ -48,7 +48,7 @@ def is_palindrome(this_line):
     return True
 
 
-# This makes sure palindromes are counted by length
+# This makes sure palindromes are counted by length.
 def count_palindromes(test_file):
     for line in test_file:
         line = line.strip()
