@@ -7,7 +7,7 @@ Homework 03: Task:
     more accurate estimates of pi using the Liebniz formula
     pi = 4/1 - 4/3  + 4/5 - 4/7 + 4/9 - 4/11 ....
 """
-
+# (a) first rough/working copy, next use generator expression
 
 # creates generator function
 def my_pi(max_repeats):
