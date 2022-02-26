@@ -7,18 +7,17 @@ Homework 03: Task:
     more accurate estimates of pi using the Liebniz formula
     pi = 4/1 - 4/3  + 4/5 - 4/7 + 4/9 - 4/11 ....
 """
-# (a) first rough/working copy, next use generator expression
+# (a) uses generator function, can it be generator expression?
+
 
 # creates generator function
 def my_pi(max_repeats):
-    res = 0
+    result = 0
     sign = 1
-    N = 1
-    for i in range(max_repeats):
-        res += 4 * sign / N
-        yield res
+    for i in range(1, max_repeats, 2):
+        result += 4 * sign / i
+        yield result
         sign *= -1
-        N += 2
 
 
 # use generator function to output iterations twords pi
