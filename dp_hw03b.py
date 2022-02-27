@@ -17,7 +17,7 @@ sign = 1
 pi_expr = (4 * sign / denom for denom in range(1, max_repeat, 2))
 
 # add running total to each iteration of generator, switch sign
-for this in pi_expr:
-    result += this
+for each in pi_expr:
+    result += each
     print(result)
     sign *= -1
