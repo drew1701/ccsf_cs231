@@ -1,8 +1,5 @@
-#!/usr/bin/env python3
 """
-Drew Patrick
-CS231 Advanced Python
-Homework 04: Task:
+Homework 04:
     Write a program that demonstrates a generator yielding the
     number of accesses made in each hour, from the beginning of
     /etc/httpd/logs/access_log
@@ -13,7 +10,7 @@ from datetime import timedelta
 
 
 # This might be the clunky-ist function ever
-# Ran out of time converting to a true generator
+# Ran out of time while converting to a true generator
 def count_hits_per_hour(number_of_hours):
     hour_count = 0
     is_first_line = True
@@ -46,8 +43,7 @@ def count_hits_per_hour(number_of_hours):
             current_hour = 0
 
 
-file_path = 'access_log'
-file_handler = open(file_path, 'r')
+file_handler = open('/etc/httpd/logs/access_log', 'r')
 
 count_hits_per_hour(25)
 
