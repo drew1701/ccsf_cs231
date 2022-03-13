@@ -54,5 +54,5 @@ while deck:
     # and how much is left to be won.
     event = "The {} {} the {}!".format(card_a[0], outcome, card_b[0])
     # below: Fixed output to show cards left, not dollars.
-    print('{:55.55}  ${} to ${}, {} cards left.'.format(
+    print('{:55.55}  ${} to ${}, {} left.'.format(
           event, score_a, score_b, int(len(deck))))
