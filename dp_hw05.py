@@ -51,8 +51,9 @@ while deck:
         outcome = 'is beaten by'
 
     # display the outcome of each battle, current winnings,
-    # and how much is left to be won.
+    # and how many cards are left.
+    # above: Fixed this comment to match initial description of output
     event = "The {} {} the {}!".format(card_a[0], outcome, card_b[0])
-    # below: Fixed output to show cards left, not dollars.
+    # below: Fixed output/formula to show cards left, not dollars.
     print('{:55.55}  ${} to ${}, {} left.'.format(
           event, score_a, score_b, int(len(deck))))
