@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-# above: Fixed shebang to be more portable.
+# above: Updated shebang to be more portable.
 import random
 
-# below: Fixed long lines in comment blocks. (multiple)
+# below: Broke up long lines in comment blocks. (multiple)
 # War, the card game of chance where 26 battles take place between rival
 # armies. The higher card wins each battle. Ties accumulate a bonus to
 # be won at the next battle. For each battle, output the number of
@@ -12,14 +12,14 @@ import random
 # Build deck list, containing tuples of the names and values of each
 # card. The order of the names list determines the cards' values.
 # The deck is 52 tuples like this: ('Jack of Diamonds', 11).
-# below: Broke long statements into separate lines per PEP8. (multiple)
+# below: Broke long statements into separate lines. (multiple)
 names = ['Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight',
          'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace']
 suits = ['Hearts', 'Diamonds', 'Spades', 'Clubs']
 # below: Fixed index to use name not suit, added 2 so values match card.
 deck = [(name + ' of ' + suit, names.index(name) + 2)
         for name in names for suit in suits]
-# below: Fixed variable names to use snake_case.(multiple)
+# below: Altered variable names to use snake_case.(multiple)
 bonus, score_a, score_b = 0, 0, 0
 
 # below: Added random to shuffle deck so each game is unique.
@@ -28,7 +28,7 @@ deck = (random.sample(deck, len(deck)))
 # As long as there are cards left in the deck, draw pairs for each
 # battle. While loop is safe as long as the only thing that happens
 # to deck is .pop().
-# below: Fixed indent to 4 spaces, as per PEP8. (multiple)
+# below: Fixed indent to 4 spaces per level. (multiple)
 while deck:
 
     # Compare a pair of cards' values, tally scores and adjust bonus.
@@ -53,5 +53,6 @@ while deck:
     # display the outcome of each battle, current winnings,
     # and how much is left to be won.
     event = "The {} {} the {}!".format(card_a[0], outcome, card_b[0])
-    print('{:55.55}  ${} to ${}, ${} left.'.format(
-        event, score_a, score_b, int(len(deck)/2)))
+    # below: Fixed output to show cards left, not dollars.
+    print('{:55.55}  ${} to ${}, {} cards left.'.format(
+          event, score_a, score_b, int(len(deck))))
