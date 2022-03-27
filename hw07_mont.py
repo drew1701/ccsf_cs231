@@ -12,7 +12,7 @@ def find_pi_monte():
     while abs(this_pie-pi) > pi/1000:
         x_point = random.uniform(-1, 1)
         y_point = random.uniform(-1, 1)
-        if x_point**2 + y_point**2 < 1:
+        if x_point ** 2 + y_point ** 2 < 1:
             total_in += 1
 
         i += 1
