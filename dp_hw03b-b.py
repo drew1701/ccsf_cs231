@@ -7,17 +7,17 @@ Homework 03: Task:
     more accurate estimates of pi using the Liebniz formula
     pi = 4/1 - 4/3  + 4/5 - 4/7 + 4/9 - 4/11 ....
 """
-# (b) uses generator expression, add CLA for max_repeat?, streamline?
+# (b) uses generator expression
+# (b-b) uses exponent to switch sign
+# (b-b) range starts 0, increments by 1, denominator updated
 
 max_repeat = 100
 result = 0
-sign = 1
 
 # define generator expression
-pi_expr = (4 * sign / denom for denom in range(1, max_repeat, 2))
+pi_expr = (4 * (-1)**i / (2 * i + 1) for i in range(max_repeat))
 
-# add running total to each iteration of generator, switch sign
+# add running total to each iteration of generator
 for this in pi_expr:
     result += this
     print(result)
-    sign *= -1

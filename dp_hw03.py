@@ -9,13 +9,11 @@ Homework 03: Task:
 """
 max_repeat = 100
 result = 0
-sign = 1
 
-# setup generator expression
-pi_expr = (4 * sign / denom for denom in range(1, max_repeat, 2))
+# define generator expression
+pi_expr = (4 * (-1)**i / (2 * i + 1) for i in range(max_repeat))
 
-# add running total to each iteration of generator, switch sign
-for each in pi_expr:
-    result += each
+# add running total to each iteration of generator
+for this in pi_expr:
+    result += this
     print(result)
-    sign *= -1
