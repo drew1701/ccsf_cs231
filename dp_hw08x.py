@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 """
-Drew Patrick
-CS231 Advanced Python
-Homework 08: Task:
+Homework 08
     Write a universal launcher program that expects its command line
     arguments to consist of the absolute path to an executable program
     in any language, followed by any number of arguments for that
