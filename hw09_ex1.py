@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # Demonstrate race condition with many unsafe calls.
 # 1000 workers do busywork and decrement a counter;
 # results differ almost every time.
