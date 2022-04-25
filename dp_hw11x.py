@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 """
-Drew Patrick
-CS231 Advanced Python
-Homework 11: Task:
+Homework 11:
     Write a program that expects as arguments any number of pathnames
     of UTF-8 encoded files, and indicates the mean number of
     bytes per character in the content of each one.
