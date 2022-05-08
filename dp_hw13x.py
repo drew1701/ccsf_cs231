@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 """
-Drew Patrick
-CS231 Advanced Python
-Homework 13: Task:
+Homework 13:
     Use http.server to serve the output of the program date -R on
     an available high port number. Tell the user what the port number
     is so that they can access the service.
